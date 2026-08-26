@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Profile Card</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Stylish Designer Text -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@600;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            /* হালকা পিঙ্ক সফট গ্রাডিয়েন্ট ব্যাকগ্রাউন্ড */
+            background: linear-gradient(135deg, #fbcfe8 0%, #f472b6 50%, #f43f5e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* লিকুইড গ্লাস কার্ড */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 28px;
+            padding: 35px 25px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px auto;
+        }
+
+        /* ছবির বদলে স্টাইলিশ ডিজাইনিং ফন্ট ব্যাজ/লোগো */
+        .text-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            
+            /* আকর্ষণীয় গ্রাডিয়েন্ট ব্যাকগ্রাউন্ড */
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+            color: #ffffff;
+            
+            /* ফ্লেক্সবক্স দিয়ে সেন্টারে অ্যালাইনমেন্ট */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* ডিজাইনার ফন্ট ও টেক্সট স্টাইলিং */
+            font-family: 'Cinzel', serif; /* একটি রাজকীয় ডিজাইনিং ফন্ট */
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            
+            /* হালকা হোভার অ্যানিমেশন */
+            transition: transform 0.3s ease;
+        }
+
+        .text-avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .title {
+            font-size: 13px;
+            color: #e11d48;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* বাটন ও ফন্ট কালার */
+        .link-btn {
+            display: flex;
+            align-items: center;
+            padding: 14px 20px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .link-btn i {
+            font-size: 22px;
+            width: 32px;
+            text-align: center;
+            margin-right: 12px;
+        }
+
+        .link-btn span {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* লোগোর আসল ব্র্যান্ড কালারসমূহ */
+        .fa-facebook-f { color: #1877f2; }       /* Facebook Blue */
+        .fa-whatsapp { color: #25d366; }         /* WhatsApp Green */
+        .fa-instagram { color: #f97316; }        /* Instagram Orange/Pink Tone */
+        .fa-youtube { color: #ff0000; }          /* YouTube Red */
+        .fa-tiktok { color: #000000; }           /* TikTok Black */
+        .fa-comment-dots { 
+            color: #ffffff; 
+            background: #00a0e9; 
+            border-radius: 50%; 
+            padding: 2px;
+            font-size: 16px !important;
+        }  /* Imo White Icon with Blue Circle */
+    </style>
+</head>
+<body>
+
+    <!-- প্রোফাইল কার্ড -->
+    <div class="profile-card">
+        <!-- Text Avatar replacing Profile Image -->
+        <div class="avatar-container">
+             <div class="text-avatar">P</div>
+        </div>
+
+        <!-- Bio Details -->
+        <h1 class="name">পারভেজ <img src="" alt=""></h1>
+        <div class="title">Digital Profile</div>
+        <p class="bio">আমার প্রোফাইলে স্বাগতম! নিচে আমার সব সোশ্যাল মিডিয়া আইডি ও যোগাযোগের লিংক দেওয়া রয়েছে।</p>
+
+        <!-- Social Links -->
+        <div class="links-container">
+            <a href="https://facebook.com/parvezbdr" target="_blank" class="link-btn">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+            </a>
+
+            <!-- <a href="https://wa.me/8801700000000" target="_blank" class="link-btn">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a> -->
+
+            <a href="https://tiktok.com/@parvezbdr" target="_blank" class="link-btn">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+
+            <a href="https://instagram.com/only___17.20" target="_blank" class="link-btn">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+
+            <a href="https://youtube.com/@parvezbdr" target="_blank" class="link-btn">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+            </a>
+
+            <!-- <a href="https://imo.im" target="_blank" class="link-btn"> 
+                <i class="fas fa-comment-dots"></i> 
+                <span>Imo</span>
+            </a> -->
+        </div>
+    </div>
+
+</body>
+</html>
